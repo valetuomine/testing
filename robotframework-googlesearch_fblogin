@@ -1,0 +1,32 @@
+*** Settings ***
+Library  SeleniumLibrary
+
+
+*** Variables ***
+
+${BROWSER}  chrome
+${HOMEPAGE}  https://www.google.com/
+${LOGINPAGE}  https://fi-fi.facebook.com/
+${MYUSERNAME}     #tähänoma
+${MYPASSWORD}     #tähänoma
+*** Keywords ***
+
+
+*** Test Cases ***
+Open Browser
+        Open Browser      ${HOMEPAGE}       ${BROWSER}
+Google Search
+        Input text        name=q            facebook
+        Sleep             1s
+        Click button      name=btnK
+        Sleep             1s
+Go to Facebook
+        Go To             ${LOGINPAGE}
+Login Facebook
+        Input text        id=email          ${MYUSERNAME}
+        Input text        id=pass           ${MYPASSWORD}
+        Click Button      name=login
+        Sleep             5s
+Close Browser
+        Sleep             5s
+        Close Browser
