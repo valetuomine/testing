@@ -1,0 +1,60 @@
+firstName = ""
+lastName = ""
+age = ""
+height = ""
+weight = ""
+
+
+print("\nTervetuloa!")
+print("Kuka olet? \n")
+firstName = input("Anna etunimesi: ")
+lastName = input("Anna sukunimesi: ")
+print("")
+print("Hei " + firstName + " " + lastName + "!")
+print("\nMinkä ikäinen olet?")
+age = input()
+print ("\nIkäsi on " + age + " vuotta!")
+
+if age <= str(30):
+  print("Olet vielä nuori!\n")
+elif age > str(30) and age <= str(50):
+  print("Alat ikääntyä!\n")
+else:
+  print("Olet jo vanha!\n")
+
+
+print("Lasketaan painoindeksisi!\n")
+
+
+height = input("Anna pituutesi metreinä (esimerkiksi: 1.88): ")
+weight = input("Anna painosi kiloina (esimerkiksi: 80): ")
+bmi = float(weight) / (float(height) * float(height))
+print("Painoindeksi: " + str(round(bmi, 2)) + "\n")
+
+print("Sairaalloinen alipaino: 0 – 15.0")
+print("Merkittävä alipaino: 15.1 – 18.0")
+print("Lievä alipaino: 18.1 – 19.0")
+print("Normaali paino: 19.1 – 25.0")
+print("Lievä ylipaino: 25.1 – 30.0")
+print("Merkittävä ylipaino: 30.1 – 35.0")
+print("Vaikea ylipaino: 35.1 – 40.0")
+print("Sairaalloinen ylipaino: 40.1 tai enemmän\n")
+
+if bmi < 15:
+    print("Sairaallollinen alipaino, ala syömään!")
+elif bmi >= 15 and bmi <= 18:
+    print("Merkittävä alipaino, syö enemmän!")
+elif bmi >= 18 and bmi <= 19:
+    print("Lievä alipaino, hieman lisää ruokaa!")
+elif bmi >= 19 and bmi <= 25:
+   print("Normaali paino, kaikki ok!")
+elif bmi >= 25 and bmi <= 30:
+    print("Lievä ylipaino, hieman ulkoilua lisää!")
+elif bmi >= 30 and bmi <= 35:
+    print("Merkittävä ylipaino, ulkoilemaan!")
+elif bmi >= 35 and bmi <= 40:
+    print("Vaikea ylipaino, heti ulos!")
+elif bmi > 40:
+    print("Sairaallollinen ylipaino, lääkäriin!")
+else:
+    print("Virheellinen arvo, käynnistä ohjelma uudelleen!")
